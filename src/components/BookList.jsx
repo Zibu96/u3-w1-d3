@@ -11,7 +11,7 @@ class BookList extends Component {
         <Row>
           {books.map((obj) => {
             return (
-              <Col>
+              <Col lg={3} className="gy-2">
                 <SingleBook img={obj.img} title={obj.title} />
               </Col>
             );

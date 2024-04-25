@@ -3,16 +3,16 @@ import Card from "react-bootstrap/Card";
 
 class SingleBook extends Component {
   state = {
-    success: false,
+    selected: false,
   };
 
   render() {
-    const cardStyle = {
-      width: "18rem",
-      backgroundColor: this.state.success ? "green" : "white",
-    }; // Change background
     return (
-      <Card style={cardStyle} onClick={() => this.setState({ success: true })}>
+      <Card
+        className="h-100"
+        onClick={() => this.setState({ selected: !this.state.selected })}
+        style={{ border: this.state.selected ? "3px solid red" : "none" }}
+      >
         <Card.Img variant="top" src={this.props.img} />
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
